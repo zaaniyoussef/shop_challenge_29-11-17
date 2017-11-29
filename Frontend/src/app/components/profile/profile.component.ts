@@ -17,7 +17,7 @@ export class ProfileComponent implements OnInit {
 
   ngOnInit() {
     this.user = JSON.parse(sessionStorage.getItem('user'));
-    this.userService.allShopsByStatus().subscribe(data=>{
+    this.userService.likedShops().subscribe(data=>{
       this.collection = data;
     });
   }

@@ -35,11 +35,18 @@ export class UserService {
     return this._http.get('http://localhost:8080/shops',{headers:headers})
     .map(res => res.text() ? res.json() : res);
   }
-
-  allShopsByStatus(){
+  
+  likedShops(){
     let headers = new Headers();
     headers.append('Content-type','application/json');
     return this._http.get('http://localhost:8080/user/shops/like',{headers:headers})
+    .map(res => res.text() ? res.json() : res);
+  }
+
+  dislikedShops(){
+    let headers = new Headers();
+    headers.append('Content-type','application/json');
+    return this._http.get('http://localhost:8080/user/shops/dislike',{headers:headers})
     .map(res => res.text() ? res.json() : res);
   }
   

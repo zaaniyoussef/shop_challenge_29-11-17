@@ -46,7 +46,13 @@ public class Controller {
 	
 	@CrossOrigin(origins="http://localhost:4200")
 	@RequestMapping("/user/shops/{status}")
-	public List<Shops> allShopsByStatus(@PathVariable String status){
+	public List<Shops> likedShops(@PathVariable String status){
+		return  sh.getAllByStatus(status);
+	}
+
+	@CrossOrigin(origins="http://localhost:4200")
+	@RequestMapping("/user/shops/{status}")
+	public List<Shops> dislikedShops(@PathVariable String status){
 		return  sh.getAllByStatus(status);
 	}
 	

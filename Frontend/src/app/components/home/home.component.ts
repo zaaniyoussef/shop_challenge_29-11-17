@@ -14,7 +14,7 @@ export class HomeComponent implements OnInit {
   constructor(private userService : UserService) { }
 
   ngOnInit() {
-      this.userService.allShops().subscribe(data=>{
+      this.userService.dislikedShops().subscribe(data=>{
       this.collection = data;
     });
   }
