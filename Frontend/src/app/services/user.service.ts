@@ -39,14 +39,14 @@ export class UserService {
   likedShops(){
     let headers = new Headers();
     headers.append('Content-type','application/json');
-    return this._http.get('http://localhost:8080/user/shops/like',{headers:headers})
+    return this._http.get('http://localhost:8080/user/likedShops/like',{headers:headers})
     .map(res => res.text() ? res.json() : res);
   }
 
   dislikedShops(){
     let headers = new Headers();
     headers.append('Content-type','application/json');
-    return this._http.get('http://localhost:8080/user/shops/dislike',{headers:headers})
+    return this._http.get('http://localhost:8080/user/dislikedShops/dislike',{headers:headers})
     .map(res => res.text() ? res.json() : res);
   }
   
